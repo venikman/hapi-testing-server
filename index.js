@@ -4,49 +4,51 @@ const Hapi = require('hapi');
 const Good = require('good');
 
 const server = new Hapi.Server();
-server.connection({ port: 3000, host: 'localhost' });
+server.connection({
+    port : 3000,
+    host : 'localhost'
+});
 
 server.route({
-    method: 'GET',
-    path: '/',
-    handler: function (request, reply) {
+    method  : 'GET',
+    path    : '/',
+    handler : (request, reply) => {
         reply('Hello, world!');
     }
 });
 
 server.route({
-    method: 'GET',
-    path: '/{name}',
-    handler: function (request, reply) {
-        reply('Hello, ' + encodeURIComponent(request.params.name) + '!' + response);
+    method  : 'GET',
+    path    : '/{name}',
+    handler : (request, reply) => {
+        reply('Hello, ' + encodeURIComponent(request.params.name) + '!');
     }
 });
 
-
 server.register({
-    register: Good,
-        options: {
-        reporters: {
-            console: [{
-                module: 'good-squeeze',
-                name: 'Squeeze',
-                args: [{
-                    log: '*',
-                    response: '*'
+    register : Good,
+    options  : {
+        reporters : {
+            console : [{
+                module : 'good-squeeze',
+                name   : 'Squeeze',
+                args   : [{
+                    log      : '*',
+                    response : '*'
                 }]
-            }, {
-                module: 'good-console'
-            }, 'stdout']
+            },
+            {
+                module : 'good-console'
+            },
+                'stdout']
         }
     }
 }, (err) => {
-
     if (err) {
         throw err; // something bad happened loading the plugin
     }
-
-    server.start((err) => {
-
+    server.start(
+    (err) => {
         if (err) {
             throw err;
         }

@@ -1,6 +1,5 @@
 import test from 'ava';
-import hapiTestingServer from '.';
 
-test('hapiTestingServer()', (t) => {
-    t.notThrows(hapiTestingServer, 'Fix all module errors.');
+test((t) => {
+    t.deepEqual([1, 2], [1, 2]);
 });
