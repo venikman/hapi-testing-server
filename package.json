@@ -35,5 +35,8 @@
     "keywords": [],
     "xo": {
         "extend": "tidy"
+    },
+    "dependencies": {
+        "hapi": "^16.6.2"
     }
 }
