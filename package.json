@@ -1,0 +1,39 @@
+{
+    "name": "hapi-testing-server",
+    "version": "0.0.0",
+    "description": "Server based on HapiJS for testing plugins and grow as developer that can do EVERITHING!!!.",
+    "homepage": "https://github.com/venikman/hapi-testing-server",
+    "main": "index.js",
+    "author": {
+        "name": "Stas Nedbailov",
+        "url": "http://nedbailov.com",
+        "email": "nedbailov375426@gmail.com"
+    },
+    "scripts": {
+        "test": "xo && ava"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:venikman/hapi-testing-server.git"
+    },
+    "bugs": {
+        "url": "https://github.com/venikman/hapi-testing-server/issues",
+        "email": "nedbailov375426@gmail.com"
+    },
+    "engines": {
+        "node": ">=7.6"
+    },
+    "license": "MPL-2.0",
+    "files": [
+        "index.js"
+    ],
+    "devDependencies": {
+        "ava": "^0.19.1",
+        "eslint-config-tidy": "^0.4.0",
+        "xo": "^0.18.0"
+    },
+    "keywords": [],
+    "xo": {
+        "extend": "tidy"
+    }
+}
