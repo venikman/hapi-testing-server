@@ -10,6 +10,7 @@
         "email": "nedbailov375426@gmail.com"
     },
     "scripts": {
+        "start": "node index.js",
         "test": "xo && ava"
     },
     "repository": {
@@ -37,6 +38,9 @@
         "extend": "tidy"
     },
     "dependencies": {
+        "good": "^7.3.0",
+        "good-console": "^6.4.0",
+        "good-squeeze": "^5.0.2",
         "hapi": "^16.6.2"
     }
 }
