@@ -2,19 +2,14 @@
 
 const Hapi = require('hapi');
 const Good = require('good');
+const doorkeeper = require('hapi-doorkeeper');
+const cookie = require('hapi-auth-cookie');
+const bell = require('bell');
 
 const server = new Hapi.Server();
 server.connection({
-    port : 3000,
-    host : 'localhost'
-});
-
-server.route({
-    method  : 'GET',
-    path    : '/',
-    handler : (request, reply) => {
-        reply('Hello, world!');
-    }
+    host : 'localhost',
+    port : 3000
 });
 
 server.route({
@@ -25,7 +20,7 @@ server.route({
     }
 });
 
-server.register({
+server.register([{
     register : Good,
     options  : {
         reporters : {
@@ -43,15 +38,35 @@ server.register({
                 'stdout']
         }
     }
-}, (err) => {
-    if (err) {
-        throw err; // something bad happened loading the plugin
+},
+    bell,
+    cookie,
+{
+    register : doorkeeper,
+    options  : {
+        sessionSecretKey : 'venikmanhandballfewmoresimbolstogetenought',
+        auth0Domain      : 'nedbailov.auth0.com',
+        auth0PublicKey   : '4FvZeLbOnzu2qfxqZ9SLRAnbVLo53CSV',
+        auth0SecretKey   : 'Gu9saPRDoLE5rFG8c52JKdR5gY5clZVbZQCJjfC1ZImI7dMVnA7pPvICUP4DWW2w'
     }
-    server.start(
-    (err) => {
-        if (err) {
-            throw err;
+}]
+);
+
+server.route({
+    method : 'GET',
+    path   : '/home',
+    config : {
+        auth : {
+            strategy : 'session',
+            mode     : 'required'
         }
-        server.log('info', 'Server running at: ' + server.info.uri);
-    });
+    },
+    handler(request, reply) {
+        reply('hi');
+    }
+});
+
+server.start()
+.then(() => {
+    console.log(server.info.uri);
 });
