@@ -38,6 +38,10 @@
         "extend": "tidy"
     },
     "dependencies": {
-        "hapi": "^17.0.1"
+        "handlebars": "^4.0.11",
+        "hapi": "^17.0.1",
+        "inert": "^5.0.1",
+        "path": "^0.12.7",
+        "vision": "^5.1.0"
     }
 }

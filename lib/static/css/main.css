@@ -1,0 +1,10 @@
+:root {
+    --main-color : #0E1111;
+    --main-color2 : #E5E5E5;
+    background: var(--main-color);
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 20px;
+}
+body, .content h1 {
+    color: var(--main-color2);
+}
