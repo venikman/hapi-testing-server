@@ -2,8 +2,8 @@
 
 const path = require('path');
 const hapi = require('hapi');
-const Vision = require('vision');
-const Inert = require('inert');
+const vision = require('vision');
+const inert = require('inert');
 const handlebars = require('handlebars');
 
 const server = hapi.server({
@@ -18,10 +18,10 @@ const server = hapi.server({
 
 server.register([
     {
-        plugin : Vision
+        plugin : vision
     },
     {
-        plugin : Inert
+        plugin : inert
     }
 ]).then(() => {
         // Template rendering configuration using "vision" plugin.
