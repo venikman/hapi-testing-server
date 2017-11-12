@@ -32,7 +32,7 @@ server.register([
         relativeTo   : path.join(__dirname, 'lib', 'view'),
             // Directories for views, helpers, partials, and layouts.
         path         : '.',
-        helpersPath  : 'helper',
+        // helpersPath  : 'helper',
         partialsPath : 'partials',
         layoutPath   : 'layout',
             // Name of the default layout file. Can be overriden in routes.
@@ -49,6 +49,3 @@ server.register([
     server.start()
         .then(console.log(server.info.uri));
 })
-    .catch((err) => {
-        throw err;
-    });
