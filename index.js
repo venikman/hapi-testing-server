@@ -1,72 +1,54 @@
 'use strict';
 
-const Hapi = require('hapi');
-const Good = require('good');
-const doorkeeper = require('hapi-doorkeeper');
-const cookie = require('hapi-auth-cookie');
-const bell = require('bell');
+const path = require('path');
+const hapi = require('hapi');
+const Vision = require('vision');
+const Inert = require('inert');
+const handlebars = require('handlebars');
 
-const server = new Hapi.Server();
-server.connection({
-    host : 'localhost',
-    port : 3000
-});
-
-server.route({
-    method  : 'GET',
-    path    : '/{name}',
-    handler : (request, reply) => {
-        reply('Hello, ' + encodeURIComponent(request.params.name) + '!');
+const server = hapi.server({
+    host   : 'localhost',
+    port   : 3001,
+    routes : {
+        files : {
+            relativeTo : path.join(__dirname, 'lib', 'static')
+        }
     }
 });
 
-server.register([{
-    register : Good,
-    options  : {
-        reporters : {
-            console : [{
-                module : 'good-squeeze',
-                name   : 'Squeeze',
-                args   : [{
-                    log      : '*',
-                    response : '*'
-                }]
-            },
-            {
-                module : 'good-console'
-            },
-                'stdout']
-        }
-    }
-},
-    bell,
-    cookie,
-{
-    register : doorkeeper,
-    options  : {
-        sessionSecretKey : 'venikmanhandballfewmoresimbolstogetenought',
-        auth0Domain      : 'nedbailov.auth0.com',
-        auth0PublicKey   : '4FvZeLbOnzu2qfxqZ9SLRAnbVLo53CSV',
-        auth0SecretKey   : 'Gu9saPRDoLE5rFG8c52JKdR5gY5clZVbZQCJjfC1ZImI7dMVnA7pPvICUP4DWW2w'
-    }
-}]
-);
-
-server.route({
-    method : 'GET',
-    path   : '/home',
-    config : {
-        auth : {
-            strategy : 'session',
-            mode     : 'required'
-        }
+server.register([
+    {
+        plugin : Vision
     },
-    handler(request, reply) {
-        reply('hi');
+    {
+        plugin : Inert
     }
-});
+]).then(() => {
+        // Template rendering configuration using "vision" plugin.
+    server.views({
+        engines : {
+            html : handlebars
+        },
+        relativeTo   : path.join(__dirname, 'lib', 'view'),
+            // Directories for views, helpers, partials, and layouts.
+        path         : '.',
+        helpersPath  : 'helper',
+        partialsPath : 'partials',
+        layoutPath   : 'layout',
+            // Name of the default layout file. Can be overriden in routes.
+        layout       : 'default-layout'
+    });
 
-server.start()
-.then(() => {
-    console.log(server.info.uri);
-});
+    /* eslint-disable global-require */
+    server.route([
+        require('./lib/route/static'),
+        require('./lib/route/root')
+    ]);
+    /* eslint-enable global-require */
+
+    server.start()
+        .then(console.log(server.info.uri));
+})
+    .catch((err) => {
+        throw err;
+    });
