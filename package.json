@@ -31,9 +31,9 @@
         "index.js"
     ],
     "devDependencies": {
-        "ava": "^0.19.1",
+        "ava": "^0.24.0",
         "eslint-config-tidy": "^0.6.2",
-        "xo": "^0.18.0"
+        "xo": "git@github.com:sindresorhus/xo.git#7c77af3cc036bf488f0b5b87e37fad9913e1a5f5"
     },
     "keywords": [],
     "xo": {
@@ -44,7 +44,6 @@
         "hapi": "^17.0.1",
         "inert": "^5.0.1",
         "path": "^0.12.7",
-        "vision": "^5.1.0",
-        "door-keeper": "git@github.com:sholladay/hapi-doorkeeper.git#6beb995a2db35b07dd39bbad63fffcda726fb98d"
+        "vision": "^5.1.0"
     }
 }
