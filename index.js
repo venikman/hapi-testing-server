@@ -26,18 +26,18 @@ server.register([
         plugin : inert
     }
 ]).then(() => {
-        // Template rendering configuration using "vision" plugin.
+    // Template rendering configuration using "vision" plugin.
     server.views({
         engines : {
             html : handlebars
         },
         relativeTo   : path.join(__dirname, 'lib', 'view'),
-            // Directories for views, helpers, partials, and layouts.
+        // Directories for views, helpers, partials, and layouts.
         path         : '.',
-        // helpersPath  : 'helper',
+        // HelpersPath  : 'helper',
         partialsPath : 'partials',
         layoutPath   : 'layout',
-            // Name of the default layout file. Can be overriden in routes.
+        // Name of the default layout file. Can be overriden in routes.
         layout       : 'default-layout'
     });
 
@@ -50,4 +50,4 @@ server.register([
 
     server.start()
         .then(console.log(server.info.uri));
-})
+});
