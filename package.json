@@ -1,5 +1,5 @@
 {
-    "name": "hapi-testing-server",
+    "name": "nedbailov",
     "version": "0.0.0",
     "description": "Server based on HapiJS for testing plugins and grow as developer that can do EVERITHING!!!.",
     "homepage": "https://github.com/venikman/hapi-testing-server",
@@ -17,6 +17,7 @@
         "type": "git",
         "url": "git@github.com:venikman/hapi-testing-server.git"
     },
+    "bin": "index.js",
     "bugs": {
         "url": "https://github.com/venikman/hapi-testing-server/issues",
         "email": "nedbailov375426@gmail.com"
@@ -31,7 +32,7 @@
     ],
     "devDependencies": {
         "ava": "^0.19.1",
-        "eslint-config-tidy": "^0.4.0",
+        "eslint-config-tidy": "^0.6.2",
         "xo": "^0.18.0"
     },
     "keywords": [],
@@ -43,6 +44,7 @@
         "hapi": "^17.0.1",
         "inert": "^5.0.1",
         "path": "^0.12.7",
-        "vision": "^5.1.0"
+        "vision": "^5.1.0",
+        "door-keeper": "git@github.com:sholladay/hapi-doorkeeper.git#6beb995a2db35b07dd39bbad63fffcda726fb98d"
     }
 }
