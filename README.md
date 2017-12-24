@@ -43,6 +43,6 @@ See our [contributing guidelines](https://github.com/venikman/nedbailov.com/blob
 
 ## License
 
-[MPL-2.0](https://github.com/venikman/nedbailov.com/blob/master/LICENSE "The license for nedbailov.com.") © [Stas Nedbailov](http://nedbailov.com "Author of nedbailov.com .")
+[MPL-2.0](https://github.com/venikman/nedbailov.com/blob/master/LICENSE "The license for nedbailov.com.") © [Stas Nedbailov](http://nedbailov.com "Author of nedbailov.com.")
 
 Go make something, dang it.
