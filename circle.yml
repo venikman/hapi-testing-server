@@ -1,3 +1,9 @@
 machine:
   node:
-    version: 7
+    version: 8
+deployment:
+  dev:
+    branch: master
+    owner: venikman
+    commands:
+      - ./deploy.sh
