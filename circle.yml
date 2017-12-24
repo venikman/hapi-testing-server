@@ -4,6 +4,5 @@ machine:
 deployment:
   dev:
     branch: master
-    owner: venikman
     commands:
       - ./deploy.sh
