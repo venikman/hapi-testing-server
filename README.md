@@ -1,4 +1,4 @@
-# hapi-testing-server [![Build status for hapi-testing-server on Circle CI.](https://img.shields.io/circleci/project/venikman/hapi-testing-server/master.svg "Circle Build Status")](https://circleci.com/gh/venikman/hapi-testing-server "Hapi Testing Server Builds")
+# hapi-testing-server [![Build status for hapi-testing-server on Circle CI.](https://img.shields.io/circleci/project/venikman/hapi-testing-server/master.svg "Circle Build Status")](https://circleci.com/gh/venikman/nedbailov.com "Hapi Testing Server Builds")
 
 > Server based on HapiJS for testing plugins and grow as developer that can do EVERITHING!!!. Also I will use it as my web-page to show people my skills.
 
@@ -22,7 +22,7 @@ clone git@github.com:venikman/hapi-testing-server.git
 	npm install
 	```
 2. Run server.
-	
+
 	```sh
 	npm start
 	```
