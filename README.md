@@ -1,4 +1,4 @@
-# hapi-testing-server [![Build status for hapi-testing-server on Circle CI.](https://img.shields.io/circleci/project/venikman/hapi-testing-server/master.svg "Circle Build Status")](https://circleci.com/gh/venikman/nedbailov.com "Hapi Testing Server Builds")
+# hapi-testing-server [![Build status for hapi-testing-server on Circle CI.](https://img.shields.io/circleci/project/venikman/nedbailov.com/master.svg "Circle Build Status")](https://circleci.com/gh/venikman/nedbailov.com "Hapi Testing Server Builds")
 
 > Server based on HapiJS for testing plugins and grow as developer that can do EVERITHING!!!. Also I will use it as my web-page to show people my skills.
 
