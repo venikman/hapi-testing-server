@@ -1,32 +1,35 @@
 # hapi-testing-server [![Build status for hapi-testing-server on Circle CI.](https://img.shields.io/circleci/project/venikman/hapi-testing-server/master.svg "Circle Build Status")](https://circleci.com/gh/venikman/hapi-testing-server "Hapi Testing Server Builds")
 
-> Server based on HapiJS for testing plugins and grow as developer that can do EVERITHING!!!.
+> Server based on HapiJS for testing plugins and grow as developer that can do EVERITHING!!!. Also I will use it as my web-page to show people my skills.
 
 ## Why?
 
- - Some.
- - Various.
- - Reasons.
+ - Practice, practice, practice.
+ - Show what I can.
+ - It goona be **FUN**.
 
 ## Install
 
 ```sh
-npm install hapi-testing-server --save
+clone git@github.com:venikman/hapi-testing-server.git
 ```
 
 ## Usage
 
-Get it into your program.
+1. Install dependencies.
 
-```js
-const hapiTestingServer = require('hapi-testing-server');
-```
+	```sh
+	npm install
+	```
+2. Run server.
+	
+	```sh
+	npm start
+	```
 
 ## API
 
-### hapiTestingServer()
-
-It throws an error and is not ready yet.
+I don't any API yet. `//TODO`
 
 ## Contributing
 
