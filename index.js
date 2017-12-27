@@ -34,8 +34,6 @@ server.register([
         relativeTo   : path.join(__dirname, 'lib', 'view'),
         // Directories for views, helpers, partials, and layouts.
         path         : '.',
-        // HelpersPath  : 'helper',
-        partialsPath : 'partials',
         layoutPath   : 'layout',
         // Name of the default layout file. Can be overriden in routes.
         layout       : 'default-layout'
@@ -44,7 +42,7 @@ server.register([
     /* eslint-disable global-require */
     server.route([
         require('./lib/route/static'),
-        require('./lib/route/root')
+        ...require('./lib/route/app')
     ]);
     /* eslint-enable global-require */
 
