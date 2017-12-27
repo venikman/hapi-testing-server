@@ -11,7 +11,7 @@
     },
     "scripts": {
         "start": "node index.js",
-        "build": "rollup --config",
+        "rollup-build": "rollup --config",
         "test": "xo && ava test/ava.test.js",
         "dev": "rollup --config --watch"
     },
