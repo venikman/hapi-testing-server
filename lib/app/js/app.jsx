@@ -2,8 +2,11 @@ import React from 'react';
 
 const App = () => {
     return (
-        <div className="testClass">
-            Venikman
+        <div>
+            <section>
+                <h1>Venikman</h1>
+                <p>Thanks for visiting.</p>
+            </section>
         </div>
     );
 };
