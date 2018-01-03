@@ -4,6 +4,7 @@ import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import App from '../lib/app/js/app.jsx';
 import * as actions from '../lib/app/js/store/actions';
+import { todos } from '../lib/app/js/store/reducers';
 
 // Config enzyme work with react v16.
 configure({ adapter : new Adapter() });
@@ -24,4 +25,42 @@ test('toggleTodo action', (t) => {
         type    : actions.TOGGLE_TODO,
         payload : 5
     });
+});
+
+test('todos reducer', (t) => {
+    t.deepEqual(todos(
+        [
+            {
+                id        : 0,
+                completed : false,
+                text      : 'buy milk'
+            },
+            {
+                id        : 1,
+                completed : false,
+                text      : 'walk the dog'
+            },
+            {
+                id        : 2,
+                completed : false,
+                text      : 'study'
+            }
+        ],
+        actions.toggleTodo(1)
+    ), [
+        {
+            id        : 0,
+            completed : false,
+            text      : 'buy milk'
+        },
+        {
+            id        : 1,
+            completed : true,
+            text      : 'walk the dog'
+        },
+        {
+            id        : 2,
+            completed : false,
+            text      : 'study' }
+    ]);
 });

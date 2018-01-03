@@ -40,6 +40,7 @@
         "path": "^0.12.7",
         "react": "^16.2.0",
         "react-dom": "^16.2.0",
+        "redux": "^3.7.2",
         "vision": "^5.1.0"
     },
     "devDependencies": {
@@ -47,6 +48,7 @@
         "await-url": "^0.3.0",
         "babel-core": "^6.24.1",
         "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+        "babel-plugin-transform-object-rest-spread": "^6.26.0",
         "babel-preset-react": "^6.24.1",
         "camelcase-keys": "^4.2.0",
         "enzyme": "^3.3.0",
@@ -80,7 +82,8 @@
             "react"
         ],
         "plugins": [
-            "transform-es2015-modules-commonjs"
+            "transform-es2015-modules-commonjs",
+            "transform-object-rest-spread"
         ]
     },
     "stylelint": {
