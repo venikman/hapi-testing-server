@@ -7,6 +7,9 @@ const hapi = require('hapi');
 const vision = require('vision');
 const inert = require('inert');
 const handlebars = require('handlebars');
+const bell = require('bell');
+const cookie = require('hapi-auth-cookie');
+const doorkeeper = require('hapi-doorkeeper');
 
 const server = hapi.server({
     host   : 'localhost',
@@ -24,6 +27,21 @@ server.register([
     },
     {
         plugin : inert
+    },
+    {
+        plugin : bell
+    },
+    {
+        plugin : cookie
+    },
+    {
+        plugin  : doorkeeper,
+        options : {
+            sessionSecretKey : 'please-make-this-much-more-secure',
+            auth0Domain      : 'nedbailov.auth0.com',
+            auth0PublicKey   : 'Z5q2GJOFa0vqvKPd0xXTrJ3wNeOzA8kx',
+            auth0SecretKey   : 'SRIBcJk699lop48wiUbmFedu1gmFPixOIbmaNaHVx9JdvvwDqvEoZmCxEtfjEmPk'
+        }
     }
 ]).then(() => {
     // Template rendering configuration using "vision" plugin.

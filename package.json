@@ -34,10 +34,14 @@
         "build"
     ],
     "dependencies": {
+        "bell": "git@github.com:rapoell/bell.git#5e21300fa461a122c884031703a607594fbbe39e",
         "handlebars": "^4.0.11",
         "hapi": "^17.0.1",
+        "hapi-auth-cookie": "^8.0.0",
+        "hapi-doorkeeper": "git@github.com:sholladay/hapi-doorkeeper.git#6beb995a2db35b07dd39bbad63fffcda726fb98d",
         "inert": "^5.0.1",
         "path": "^0.12.7",
+        "prop-types": "^15.6.0",
         "react": "^16.2.0",
         "react-dom": "^16.2.0",
         "redux": "^3.7.2",
