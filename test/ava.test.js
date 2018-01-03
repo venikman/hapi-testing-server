@@ -9,9 +9,7 @@ configure({ adapter : new Adapter() });
 
 test('shallow', (t) => {
     const wrapper = shallow(<App />);
-    const fooInner = wrapper.find('.testClass');
     t.is(wrapper.contains(<div className="testClass">Venikman</div>), true);
-    t.is(fooInner.is('.testClass'), true);
 });
 
 test('2', (t) => {
