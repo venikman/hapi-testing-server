@@ -7,7 +7,7 @@ const userInformation = (props) => {
             <div>{props.name}</div>
             <div>{props.id}</div>
         </section>
-    )
+    );
 };
 
 export default userInformation;
