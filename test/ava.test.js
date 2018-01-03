@@ -5,6 +5,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import App from '../lib/app/js/app.jsx';
 import * as actions from '../lib/app/js/store/actions';
 import { todos } from '../lib/app/js/store/reducers';
+import getTodos from '../lib/app/js/store/selectors';
 
 // Config enzyme work with react v16.
 configure({ adapter : new Adapter() });
@@ -63,4 +64,24 @@ test('todos reducer', (t) => {
             completed : false,
             text      : 'study' }
     ]);
+});
+test('getTodos selector', (t) => {
+    const todo = [
+        {
+            id        : 0,
+            completed : false,
+            text      : 'buy milk'
+        },
+        {
+            id        : 1,
+            completed : false,
+            text      : 'walk the dog'
+        },
+        {
+            id        : 2,
+            completed : false,
+            text      : 'study'
+        }
+    ];
+    t.deepEqual(getTodos({ todo }), todo);
 });

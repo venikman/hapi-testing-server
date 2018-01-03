@@ -12,7 +12,7 @@
     "scripts": {
         "start": "node index.js",
         "rollup-build": "rollup --config",
-        "test": "xo && ava test/ava.test.js",
+        "test": "xo && ava test/*.test.js",
         "dev": "rollup --config --watch"
     },
     "repository": {
