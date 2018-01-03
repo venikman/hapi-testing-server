@@ -3,16 +3,16 @@ import React from 'react';
 import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import App from '../lib/app/js/app.jsx';
-import * as actions from '../lib/app/js/store/actions';
-import { todos } from '../lib/app/js/store/reducers';
-import getTodos from '../lib/app/js/store/selectors';
+import * as actions from '../lib/app/js/store-for-tests/actions';
+import { todos } from '../lib/app/js/store-for-tests/reducers';
+import getTodos from '../lib/app/js/store-for-tests/selectors';
 
 // Config enzyme work with react v16.
 configure({ adapter : new Adapter() });
 
 test('shallow', (t) => {
     const wrapper = shallow(<App />);
-    t.is(wrapper.contains(<div className="testClass">Venikman</div>), true);
+    t.is(wrapper.contains(<div className="testClass" />), true);
 });
 
 test('2', (t) => {
