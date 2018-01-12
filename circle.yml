@@ -1,9 +1,5 @@
-machine:
-  node:
-    version: 8
-deployment:
-  dev:
-    branch: master
-    owner: venikman
-    commands:
-      - ./deploy.sh
+version: 2
+jobs:
+  deploy:
+    - ./deploy.sh
+    
