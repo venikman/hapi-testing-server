@@ -1,6 +1,7 @@
 version: 2
 jobs:
-    building:
-        checkout: 
-            - ../deploy.sh
+    build:
+        steps:
+            checkout: 
+                - ../deploy.sh
     
