@@ -4,6 +4,5 @@ jobs:
         machine:
               circleci/classic:latest
         steps:
-           - checkout
-                - ./deploy.sh
+           - run: ./deploy.sh
     
