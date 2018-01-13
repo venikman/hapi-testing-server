@@ -1,9 +1,9 @@
 version: 2
 jobs:
     build:
-        docker:
-              - image: circleci/node:4.8.2
+        machine:
+              circleci/classic:latest
         steps:
-           - checkout: 
+           - checkout
                 - ./deploy.sh
     
