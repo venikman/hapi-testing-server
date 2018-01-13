@@ -1,5 +1,6 @@
 version: 2
-workflows:
-    jobs:
-        - ./deploy.sh
+jobs:
+    building:
+        checkout: 
+            - ../deploy.sh
     
