@@ -1,7 +1,6 @@
-#!/usr/bin/env node
-
 'use strict';
 
+const fs = require('fs');
 const path = require('path');
 const hapi = require('hapi');
 const vision = require('vision');
@@ -13,11 +12,18 @@ const doorkeeper = require('hapi-doorkeeper');
 
 const server = hapi.server({
     host   : 'localhost',
-    port   : 3001,
+    port   : 3000,
     routes : {
         files : {
             relativeTo : path.join(__dirname, 'lib', 'static')
         }
+    },
+    // Openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -nodes
+    tls : !process.env.NOW && {
+        /* eslint-disable no-sync */
+        key  : fs.readFileSync('./key.pem'),
+        cert : fs.readFileSync('cert.pem')
+        /* eslint-enable no-sync */
     }
 });
 
